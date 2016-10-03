@@ -17,7 +17,7 @@ DB_CONNECTION=mysql -> DB_CONNECTION=sqlite
 
 ## run
 ```
-$ php artisan run
+$ php artisan serve
 ```
 
 ## API routes
