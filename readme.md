@@ -36,7 +36,7 @@ $ php artisan serve
 ```
 * method: POST
 * parameters
-  * POST
+  * POST:
   * plant_id [integer]
   * longitude [integer]
   * latitude [integer]
