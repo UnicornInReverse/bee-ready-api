@@ -6,22 +6,21 @@
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    New Plant
+                    Edit User
                     
-                    <a class="pull-right link" href="{{ url('/plant/'. $plant->id) }}">
-                        details
+                    <a class="pull-right link" href="{{ url('user/' . $user->id) }}">
+                        user
                     </a>
                 </div>
-
                 <div class="panel-body">
-                    <form class="form-horizontal" role="form" method="POST" action="{{ url('/plant/' .$plant->id) }}">
+                    <form class="form-horizontal" role="form" method="POST" action="{{ url('/user/' . $user->id) }}">
                         {{ csrf_field() }}
 
                         <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
                             <label for="name" class="col-md-4 control-label">Name</label>
 
                             <div class="col-md-6">
-                                <input id="name" type="text" class="form-control" name="name" value="{{ old('name') != null ? old('name') : $plant->name }}" required autofocus>
+                                <input id="name" type="text" class="form-control" name="name" value="{{ old('name') != null ? old('name') : $user->name }}" required autofocus>
 
                                 @if ($errors->has('name'))
                                     <span class="help-block">
@@ -31,14 +30,17 @@
                             </div>
                         </div>
 
-                        <div class="form-group{{ $errors->has('season_id') ? ' has-error' : '' }}">
-                            <label for="season_id" class="col-md-4 control-label">Season</label>
+                        <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
+                            <label for="email" class="col-md-4 control-label">Email</label>
+
                             <div class="col-md-6">
-                                <select class="form-control" id="season_id" name="season_id">
-                                    @foreach($seasons as $season)
-                                        <option value="{{{ $season->id }}}">{{{ $season->name }}}</option>
-                                    @endforeach
-                                </select>
+                                <input id="email" type="email" class="form-control" name="email" value="{{ old('email') != null ? old('email') : $user->email }}" required>
+
+                                @if ($errors->has('email'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('email') }}</strong>
+                                    </span>
+                                @endif
                             </div>
                         </div>
 

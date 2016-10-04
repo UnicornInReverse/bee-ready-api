@@ -6,25 +6,21 @@
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    Planten
+                    Seasons
                     
-                    <a class="pull-right  link" href="{{ url('/plant/new') }}">
+                    <a class="pull-right link" href="{{ url('/season/new') }}">
                         new
                     </a>
                 </div>
                 <div class="panel-body">
-                    @foreach($plants as $plant)
-                        <a href="{{ url('plant/' . $plant->id) }}">
+                    @foreach($seasons as $season)
+                        <a href="{{ url('season/' . $season->id) }}">
                             <div>
-                                <p><b>name:</b> {{{ $plant->name }}}
-                                <p><b>season:</b> {{{ $plant->season->name }}}</p>
+                                <p><b>name:</b> {{{ $season->name }}}</p>
                             </div>
                         </a>
                         <hr>
                     @endforeach
-                    <div class="pull-right">
-                        {{ $plants->links() }}
-                    </div>
                 </div>
             </div>
         </div>

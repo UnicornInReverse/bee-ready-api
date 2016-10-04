@@ -1,0 +1,30 @@
+.dashboard-item {
+	width: 22%;
+	height: 100px;
+	margin: 1%;
+	line-height: 85px;
+	font-size: 16px;
+	background-color: #33f7a9;
+}
+
+
+.dashboard-item:hover {
+	background-color: #0ad192;
+}
+
+.dashboard-btns{
+	margin: auto;
+}
+
+a {
+	text-decoration: none;
+	color: #636363;
+}
+
+a:hover {
+	color: #3f3f3f;
+}
+
+.link {
+	color: #4c90ff;
+}
