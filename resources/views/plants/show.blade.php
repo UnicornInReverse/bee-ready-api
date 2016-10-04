@@ -9,8 +9,8 @@
                     Plant {{{ $plant->name }}}
                     
                     <p class="pull-right">
-                        <a href="{{ url('/plant/'. $plant->id) }}">
-                            details
+                        <a href="{{ url('/plant/'. $plant->id. '/edit') }}">
+                            edit
                         </a>
                          |
                         <a href="{{ url('/plant/' . $plant->id . '/delete') }}">
