@@ -12,12 +12,6 @@ use Illuminate\Http\Request;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
-
-Route::get('/user', function (Request $request) {
-    return $request->user();
-})->middleware('auth:api');
-
-
-Route::get('/plant/{ofset?}', 'PlantController@index');
+Route::get('/plant/{ofset?}', 'PlantController@showList');
 Route::post('/scan', 'ScanController@store');
 Route::post('/area', 'AreaController@show');

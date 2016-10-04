@@ -14,3 +14,14 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::group(['prefix' => 'plant', 'middleware' => 'auth'], function(){
+	Route::get('/', 'PlantController@index');
+	Route::post('/', 'PlantController@store');
+	Route::get('/{id}', 'PlantController@show');
+	Route::post('/{id}', 'PlantController@update');
+	Route::post('/{id}/delete', 'PlantController@delete');
+});
+Auth::routes();
+
+Route::get('/home', 'HomeController@index');
