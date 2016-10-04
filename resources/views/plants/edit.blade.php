@@ -7,7 +7,7 @@
             <div class="panel panel-default">
                 <div class="panel-heading">
                     New Plant
-
+                    
                     <a class="pull-right" href="{{ url('/plant/'. $plant->id) }}">
                         details
                     </a>

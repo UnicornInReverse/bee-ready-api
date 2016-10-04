@@ -8,9 +8,15 @@
                 <div class="panel-heading">
                     Plant {{{ $plant->name }}}
                     
-                    <a class="pull-right" href="{{ url('/plant/' . $plant->id . '/edit') }}">
-                        edit
-                    </a>
+                    <p class="pull-right">
+                        <a href="{{ url('/plant/'. $plant->id) }}">
+                            details
+                        </a>
+                         |
+                        <a href="{{ url('/plant/' . $plant->id . '/delete') }}">
+                            delete
+                        </a>
+                    </p>
                 </div>
 
                 <div class="panel-body">
