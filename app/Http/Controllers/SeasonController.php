@@ -33,11 +33,11 @@ class SeasonController extends Controller
      */
     public function store(Request $request){
     	$this->validate($request, [
-    		'name' => 'required|max:50']);
+    		'name' => 'required|max:50|unique:seasons']);
 
     	$season = Season::create($request->all());
 
-    	return redirect('/season' . $season->id);
+    	return redirect('season/' . $season->id);
     }
 
     /**
@@ -48,9 +48,14 @@ class SeasonController extends Controller
     public function show($id){
     	$season = Season::findOrFail($id);
 
-    	return view('seasons.edit', compact('season'));
+    	return view('seasons.show', compact('season'));
     }	
 
+    public function edit($id){
+    	$season = Season::findOrFail($id);
+
+    	return view('seasons.edit', compact('season'));
+    }
     /**
      * updates a season
      * @param  Request $request [description]
@@ -61,8 +66,17 @@ class SeasonController extends Controller
     	$this->validate($request, [
     		'name' => 'required|max:50']);
 
-    	$season = Season::create($request::all());
+    	$season = Season::findOrFail($id);
+    	$season->name = $request->input('name');
 
     	return redirect('season/' . $season->id);
+    }
+
+    public function delete($id){
+    	$season = Season::findOrFail($id);
+
+    	$season->delete();
+
+    	return redirect('/season');
     }
 }
