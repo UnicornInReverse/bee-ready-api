@@ -43,6 +43,12 @@ Route::group(['prefix' => 'season', 'middleware' => 'auth'], function(){
 	Route::post('/{id}', 'SeasonController@update');
 	Route::get('/{id}/delete', 'SeasonController@delete');
 });
+
+Route::group(['prefix' => 'scan', 'middleware' => 'auth'], function(){
+	Route::get('/', 'ScanController@index');
+	Route::get('/{id}/delete', 'ScanController@delete');
+});
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index');
