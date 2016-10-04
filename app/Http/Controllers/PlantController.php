@@ -24,7 +24,8 @@ class PlantController extends Controller
      * @return [type] [description]
      */
     public function index(){
-    	$plants = Plant::paginate(10);						//TO-DO: pagination
+    	$plants = Plant::paginate(10);	
+
     	return view('plants.index', compact('plants'));
     }
 

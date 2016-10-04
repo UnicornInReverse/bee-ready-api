@@ -11,6 +11,16 @@ use Validator;
 class ScanController extends Controller
 {
     /**
+     * shows a list of scans
+     * @return [type] [description]
+     */
+    public function index(){
+        $scans = Scan::paginate(25);
+
+        return view('scans.index', compact('scans'));
+    }
+
+    /**
      * stores a new scan
      * @param  Request $request [description]
      * @return [type]           [description]
@@ -35,5 +45,13 @@ class ScanController extends Controller
     		'longitude' => $request->input('longitude'),
     		'latitude' => $request->input('latitude')
     		]);
+    }
+
+    public function delete($id){
+        $scan = Scan::findOrFail($id);
+
+        $scan->delete();
+
+        return redirect('/scan');
     }
 }
