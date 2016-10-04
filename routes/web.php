@@ -17,7 +17,9 @@ Route::get('/', function () {
 
 Route::group(['prefix' => 'plant', 'middleware' => 'auth'], function(){
 	Route::get('/', 'PlantController@index');
+	Route::get('/new', 'PlantController@create');
 	Route::post('/', 'PlantController@store');
+	Route::get('/{id}/edit', 'PlantController@edit');
 	Route::get('/{id}', 'PlantController@show');
 	Route::post('/{id}', 'PlantController@update');
 	Route::post('/{id}/delete', 'PlantController@delete');

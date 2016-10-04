@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Plant;
+use App\Season;
 
 class PlantController extends Controller
 {
@@ -28,13 +29,27 @@ class PlantController extends Controller
     }
 
     /**
+     * shows the form for creating a new plant
+     * @return [type] [description]
+     */
+    public function create(){
+    	$seasons = Season::all();
+
+    	return view('plants.create', compact('seasons'));
+    }
+
+    /**
      * stores a new pant
      * @param  Request $request [description]
      * @return [type]           [description]
      */
     public function store(Request $request){
+    	$this->validate($request, ['name' => 'required|max:50',
+    							   'season_id' => 'required|numeric']);
 
-    	return back();
+    	$plant = Plant::create($request->all());
+
+    	return redirect('/plant/' . $plant->id);
     }
 
     /**
@@ -46,6 +61,13 @@ class PlantController extends Controller
     	$plant = Plant::findOrFail($id);
 
     	return view('plants.show', compact('plant'));
+    }
+
+    public function edit($id){
+    	$plant = Plant::findOrFail($id);
+    	$seasons = Season::all();
+    	
+    	return view('plants.edit', compact('plant', 'seasons'));
     }
 
     /**
