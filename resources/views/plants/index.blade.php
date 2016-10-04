@@ -15,13 +15,15 @@
                 <div class="panel-body">
                     @foreach($plants as $plant)
                         <a href="{{ url('plant/' . $plant->id) }}">
-                        <div>
-                            <p><b>name:</b> {{{ $plant->name }}}
-                            <p><b>season:</b> {{{ $plant->season->name }}}</p>
-                        </p>
-                        </div>
+                            <div>
+                                <p><b>name:</b> {{{ $plant->name }}}
+                                <p><b>season:</b> {{{ $plant->season->name }}}</p>
+                            </p>
+                            </div>
+                        </a>
                         <hr>
                     @endforeach
+                    {{ $plants->links() }}
                 </div>
             </div>
         </div>
