@@ -9,11 +9,11 @@
                     Season {{{ $season->name }}}
                     
                     <p class="pull-right">
-                        <a href="{{ url('/season/'. $season->id. '/edit') }}">
+                        <a class="link" href="{{ url('/season/'. $season->id. '/edit') }}">
                             edit
                         </a>
                          |
-                        <a href="{{ url('/season/' . $season->id . '/delete') }}">
+                        <a class="link" href="{{ url('/season/' . $season->id . '/delete') }}">
                             delete
                         </a>
                     </p>

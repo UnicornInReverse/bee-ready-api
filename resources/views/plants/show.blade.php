@@ -9,11 +9,11 @@
                     Plant {{{ $plant->name }}}
                     
                     <p class="pull-right">
-                        <a href="{{ url('/plant/'. $plant->id. '/edit') }}">
+                        <a class="link" href="{{ url('/plant/'. $plant->id. '/edit') }}">
                             edit
                         </a>
                          |
-                        <a href="{{ url('/plant/' . $plant->id . '/delete') }}">
+                        <a class="link" href="{{ url('/plant/' . $plant->id . '/delete') }}">
                             delete
                         </a>
                     </p>

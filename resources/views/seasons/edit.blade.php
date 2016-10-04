@@ -8,7 +8,7 @@
                 <div class="panel-heading">
                     Edit Season
 
-                    <a class="pull-right" href="{{ url('/season/' . $season->id ) }}">
+                    <a class="pull-right link" href="{{ url('/season/' . $season->id ) }}">
                         Season
                     </a>
                 </div>

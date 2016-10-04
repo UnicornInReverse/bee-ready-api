@@ -8,7 +8,7 @@
                 <div class="panel-heading">
                     New Plant
                     
-                    <a class="pull-right" href="{{ url('/plant/'. $plant->id) }}">
+                    <a class="pull-right link" href="{{ url('/plant/'. $plant->id) }}">
                         details
                     </a>
                 </div>

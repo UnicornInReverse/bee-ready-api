@@ -9,11 +9,11 @@
                     User
                     
                     <p class="pull-right">
-                        <a href="{{ url('/user/' . $user->id . '/edit') }}">
+                        <a class="link" href="{{ url('/user/' . $user->id . '/edit') }}">
                             edit
                         </a>
                          | 
-                        <a href="{{ url('/user/' . $user->id . '/delete') }}">
+                        <a class="link" href="{{ url('/user/' . $user->id . '/delete') }}">
                             delete
                         </a>
                     </p>

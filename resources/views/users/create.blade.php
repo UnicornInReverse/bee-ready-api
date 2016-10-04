@@ -8,7 +8,7 @@
                 <div class="panel-heading">
                     New User
                     
-                    <a class="pull-right" href="{{ url('/user') }}">
+                    <a class="pull-right link" href="{{ url('/user') }}">
                         users
                     </a>
                 </div>

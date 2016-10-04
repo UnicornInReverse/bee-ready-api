@@ -8,7 +8,7 @@
                 <div class="panel-heading">
                     Seasons
                     
-                    <a class="pull-right" href="{{ url('/season/new') }}">
+                    <a class="pull-right link" href="{{ url('/season/new') }}">
                         new
                     </a>
                 </div>
