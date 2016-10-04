@@ -84,4 +84,10 @@ class UserController extends Controller
 
     	return redirect('user/' . $user->id);
     }
+
+    public function delete(User $id){
+    	$id->delete();
+
+    	return redirect('/user');
+    }
 }

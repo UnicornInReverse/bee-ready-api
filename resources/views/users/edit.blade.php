@@ -8,7 +8,7 @@
                 <div class="panel-heading">
                     Edit User
                     
-                    <a class="pull-right" href="{{ url('/user' . $user->id) }}">
+                    <a class="pull-right" href="{{ url('user/' . $user->id) }}">
                         user
                     </a>
                 </div>

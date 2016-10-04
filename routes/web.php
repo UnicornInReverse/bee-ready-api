@@ -31,7 +31,7 @@ Route::group(['prefix' => 'user', 'middleware' => 'auth'], function(){
 	Route::post('/', 'UserController@store');
 	Route::get('/{id}', 'UserController@show');
 	Route::get('/{id}/edit', 'UserController@edit');
-	Route::post('/{id}', 'UserController@update');
+	Route::get('/{id}/delete', 'UserController@delete');
 });
 
 Auth::routes();

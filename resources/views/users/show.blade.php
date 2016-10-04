@@ -8,9 +8,15 @@
                 <div class="panel-heading">
                     User
                     
-                    <a class="pull-right" href="{{ url('/user/' . $user->id . '/edit') }}">
-                        edit
-                    </a>
+                    <p class="pull-right">
+                        <a href="{{ url('/user/' . $user->id . '/edit') }}">
+                            edit
+                        </a>
+                         | 
+                        <a href="{{ url('/user/' . $user->id . '/delete') }}">
+                            delete
+                        </a>
+                    </p>
                 </div>
                 <div class="panel-body">
                     <p><b>name:</b> {{{ $user->name }}}</p>
