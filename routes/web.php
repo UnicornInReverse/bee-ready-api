@@ -34,6 +34,12 @@ Route::group(['prefix' => 'user', 'middleware' => 'auth'], function(){
 	Route::get('/{id}/delete', 'UserController@delete');
 });
 
+Route::group(['prefix' => 'season', 'middleware' => 'auth'], function(){
+	Route::get('/', 'SeasonController@index');
+	Route::get('/new', 'SeasonController@create');
+	Route::post('/', 'SeasonController@store');
+	Route::get('/{id}/show', 'SeasonController@show');
+});
 Auth::routes();
 
 Route::get('/home', 'HomeController@index');

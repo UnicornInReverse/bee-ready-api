@@ -19,6 +19,10 @@ class UserController extends Controller
     	return view('users.index', compact('users'));
     }
 
+    /**
+     * shows the create form
+     * @return [type] [description]
+     */
     public function create(){
     	return view('users.create');
     }
@@ -85,6 +89,11 @@ class UserController extends Controller
     	return redirect('user/' . $user->id);
     }
 
+    /**
+     * deletes an User
+     * @param  User   $id  		the user to delete
+     * @return [type]     [description]
+     */
     public function delete(User $id){
     	$id->delete();
 

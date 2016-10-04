@@ -1,0 +1,11 @@
+.dashboard-item {
+	width: 22%;
+	height: 100px;
+	margin: 1%;
+	line-height: 85px;
+	font-size: 16px;
+}
+
+.dashboard-btns{
+	margin: auto;
+}

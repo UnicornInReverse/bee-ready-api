@@ -10,6 +10,11 @@ use Validator;
 
 class ScanController extends Controller
 {
+    /**
+     * stores a new scan
+     * @param  Request $request [description]
+     * @return [type]           [description]
+     */
     public function store(Request $request){
     	$validator = Validator::make($request->all(), [
 				'plant_id' => 'required',
