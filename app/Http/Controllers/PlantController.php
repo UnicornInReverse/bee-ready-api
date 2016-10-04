@@ -100,6 +100,6 @@ class PlantController extends Controller
 
     	$plant->delete();
 
-    	return redirect('/plants');
+    	return redirect('/plant');
     }
 }

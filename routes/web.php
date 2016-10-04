@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect('/plant');
 });
 
 Route::group(['prefix' => 'plant', 'middleware' => 'auth'], function(){
@@ -22,7 +22,7 @@ Route::group(['prefix' => 'plant', 'middleware' => 'auth'], function(){
 	Route::get('/{id}/edit', 'PlantController@edit');
 	Route::get('/{id}', 'PlantController@show');
 	Route::post('/{id}', 'PlantController@update');
-	Route::post('/{id}/delete', 'PlantController@delete');
+	Route::get('/{id}/delete', 'PlantController@delete');
 });
 Auth::routes();
 
