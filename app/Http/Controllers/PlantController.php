@@ -63,6 +63,11 @@ class PlantController extends Controller
     	return view('plants.show', compact('plant'));
     }
 
+    /**
+     * shows the edit form
+     * @param  int $id  	id of the plant
+     * @return [type]     [description]
+     */
     public function edit($id){
     	$plant = Plant::findOrFail($id);
     	$seasons = Season::all();

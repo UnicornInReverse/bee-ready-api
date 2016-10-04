@@ -8,7 +8,10 @@
                 <div class="panel-heading">Dashboard</div>
 
                 <div class="panel-body">
-                    You are logged in!
+                    <a href="{{ url('plant') }}" class="btn btn-default">Plants</a>
+                    <a href="{{ url('user') }}" class="btn btn-default">Users</a>
+                    <a href="{{ url('scan') }}" class="btn btn-default">Scans</a>
+                    <a href="{{ url('scan') }}" class="btn btn-default">Scans</a>
                 </div>
             </div>
         </div>

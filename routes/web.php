@@ -12,8 +12,8 @@
 */
 
 Route::get('/', function () {
-    return redirect('/plant');
-});
+    return view('home');
+})->middleware('auth');
 
 Route::group(['prefix' => 'plant', 'middleware' => 'auth'], function(){
 	Route::get('/', 'PlantController@index');
@@ -24,6 +24,16 @@ Route::group(['prefix' => 'plant', 'middleware' => 'auth'], function(){
 	Route::post('/{id}', 'PlantController@update');
 	Route::get('/{id}/delete', 'PlantController@delete');
 });
+
+Route::group(['prefix' => 'user', 'middleware' => 'auth'], function(){
+	Route::get('/', 'UserController@index');
+	Route::get('/new', 'UserController@create');
+	Route::post('/', 'UserController@store');
+	Route::get('/{id}', 'UserController@show');
+	Route::get('/{id}/edit', 'UserController@edit');
+	Route::post('/{id}', 'UserController@update');
+});
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index');
