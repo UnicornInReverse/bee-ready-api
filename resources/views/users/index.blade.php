@@ -17,7 +17,7 @@
                         <a href="{{ url('user/' . $user->id) }}">
                             <div>
                                 <p><b>name:</b> {{{ $user->name }}}
-                                <p><b>season:</b> {{{ $user->email }}}</p>
+                                <p><b>email:</b> {{{ $user->email }}}</p>
                             </div>
                         </a>
                         <hr>

@@ -5,15 +5,17 @@
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
-                <div class="panel-heading">Scans</div>
-        
+                <div class="panel-heading">
+                    Scans
+                </div>
+                    
                 <div class="panel-body">
                 <table class="table">
                     <thead>
                         <th>plant</th>
                         <th>user</th>
-                        <th>longitude</th>
-                        <th>latitude</th>
+                        <th>plaats</th>
+                        <th>coordinaten</th>
                         <th></th>
                     </thead>
                     <tbody>
@@ -30,10 +32,10 @@
                                     </a>
                                 </td>
                                 <td>
-                                    {{{ $scan->longitude }}}
+                                    Rotterdam
                                 </td>
                                 <td>
-                                    {{{ $scan->latitude }}}
+                                    {{{ $scan->longitude }}}, {{{ $scan->latitude }}}
                                 </td>
                                 <td>
                                     <a href="{{ url('scan/' .$scan->id . '/delete') }}">
