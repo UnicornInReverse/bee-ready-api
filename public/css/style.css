@@ -28,3 +28,16 @@ a:hover {
 .link {
 	color: #4c90ff;
 }
+
+.selectable-item {
+	border-bottom: 1px solid lightgrey; 
+	padding: 5px;
+}
+
+.selectable-item:nth-last-child(2) {
+	border: none;
+}
+
+.selectable-item:hover {
+	background-color: #d8d8d8;
+}

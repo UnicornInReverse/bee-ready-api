@@ -14,13 +14,15 @@
                 </div>
                 <div class="panel-body">
                     @foreach($seasons as $season)
-                        <a href="{{ url('season/' . $season->id) }}">
-                            <div>
+                        <div class="selectable-item">
+                            <a href="{{ url('season/' . $season->id) }}">
                                 <p><b>name:</b> {{{ $season->name }}}</p>
-                            </div>
-                        </a>
-                        <hr>
+                            </a>
+                        </div>
                     @endforeach
+                    <div class="pull-right">
+                        {{ $seasons->links() }}
+                    </div>
                 </div>
             </div>
         </div>

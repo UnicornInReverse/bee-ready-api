@@ -14,13 +14,12 @@
                 </div>
                 <div class="panel-body">
                     @foreach($users as $user)
-                        <a href="{{ url('user/' . $user->id) }}">
-                            <div>
-                                <p><b>name:</b> {{{ $user->name }}}
+                        <div class="selectable-item">
+                            <a href="{{ url('user/' . $user->id) }}">
+                                <p><b>name:</b> {{{ $user->name }}}</p>
                                 <p><b>email:</b> {{{ $user->email }}}</p>
-                            </div>
-                        </a>
-                        <hr>
+                            </a>
+                        </div>
                     @endforeach
                     <div class="pull-right">
                         {{ $users->links() }}
