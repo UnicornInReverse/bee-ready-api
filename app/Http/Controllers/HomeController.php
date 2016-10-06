@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Scan;
 
 class HomeController extends Controller
 {
@@ -23,6 +24,8 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $scans = Scan::orderBy('id', 'desc')->take(5)->get();
+
+        return view('home', compact('scans'));
     }
 }

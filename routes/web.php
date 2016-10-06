@@ -11,9 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-    return view('home');
-})->middleware('auth');
+Route::get('/', 'HomeController@index')->middleware('auth');
 
 Route::group(['prefix' => 'plant', 'middleware' => 'auth'], function(){
 	Route::get('/', 'PlantController@index');
