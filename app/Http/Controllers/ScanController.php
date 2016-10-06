@@ -15,7 +15,7 @@ class ScanController extends Controller
      * @return [type] [description]
      */
     public function index(){
-        $scans = Scan::paginate(25);
+        $scans = Scan::with('plant', 'user')->paginate(25);
 
         return view('scans.index', compact('scans'));
     }

@@ -23,6 +23,7 @@ Route::group(['prefix' => 'plant', 'middleware' => 'auth'], function(){
 	Route::get('/{id}', 'PlantController@show');
 	Route::post('/{id}', 'PlantController@update');
 	Route::get('/{id}/delete', 'PlantController@delete');
+	Route::post('/search', 'PlantController@search');
 });
 
 Route::group(['prefix' => 'user', 'middleware' => 'auth'], function(){
@@ -32,6 +33,7 @@ Route::group(['prefix' => 'user', 'middleware' => 'auth'], function(){
 	Route::get('/{id}', 'UserController@show');
 	Route::get('/{id}/edit', 'UserController@edit');
 	Route::get('/{id}/delete', 'UserController@delete');
+	Route::post('/search', 'UserController@search');
 });
 
 Route::group(['prefix' => 'season', 'middleware' => 'auth'], function(){

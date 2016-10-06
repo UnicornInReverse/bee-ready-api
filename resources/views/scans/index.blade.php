@@ -45,6 +45,9 @@
                             </tr>
                         @endforeach
                     </table>
+                    <div class="pull-right">
+                        {{ $scans->links() }}
+                    </div>
                 </div>
             </div>
         </div>

@@ -26,7 +26,27 @@ class PlantController extends Controller
     public function index(){
     	$plants = Plant::paginate(10);	
 
-    	return view('plants.index', compact('plants'));
+        $keyword = '';                                          //dirty hack
+
+    	return view('plants.index', compact('plants', 'keyword'));
+    }
+
+    /**
+     * searches for plants and shows them
+     * @param  Request $request [description]
+     * @return [type]           [description]
+     */
+    public function search(Request $request){
+        $this->validate($request, [
+            'keyword' => 'required']);
+
+        $keyword = $request->input('keyword');
+
+        $plants = Plant::where('name', 'LIKE', "%$keyword%")->paginate(10);
+
+
+        dd($plants);
+        return view('plants.index', compact('plants', 'keyword'));
     }
 
     /**

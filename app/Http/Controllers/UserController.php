@@ -16,7 +16,25 @@ class UserController extends Controller
     public function index(){
     	$users = User::paginate(10);
 
-    	return view('users.index', compact('users'));
+        $keyword = '';                                               //dirty hack
+
+    	return view('users.index', compact('users', 'keyword'));
+    }
+
+    /**
+     * search for users and shows them
+     * @param  Request $request [description]
+     * @return [type]           [description]
+     */
+    public function search(Request $request){
+        $this->validate($request, [
+            'keyword' => 'required']);
+
+        $keyword = $request->input('keyword');
+
+        $users = User::where('name', 'LIKE', "%$keyword%")->paginate(10);
+
+        return view('users.index', compact('users', 'keyword'));
     }
 
     /**

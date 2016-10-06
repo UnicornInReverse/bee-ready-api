@@ -4,6 +4,13 @@
 <div class="container">
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
+        <div class="panel panel-default">
+            <form method="POST" action="{{ url('user/search') }}">
+                <input id="keyword" type="text" class="form-control" name="keyword" placeholder="search" autofocus="autofocus" required="required" value="{{{ $keyword }}}">
+
+                {{ csrf_field() }}
+            </form>
+        </div>
             <div class="panel panel-default">
                 <div class="panel-heading">
                     Users
